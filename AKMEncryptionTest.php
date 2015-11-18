@@ -61,6 +61,7 @@
 		'ciphertext_encoding' => AKMEncryption::ENCODING_HEX,
 	), true, false );
 	print_r( $result );
+	$fp			= $result['fp'];
 
 	$result = $encryption->CBC_Decrypt( $ciphertext2, array(
 		'host'	=> '10.0.1.16',
@@ -68,5 +69,6 @@
 		'ca_file'	=> 'keys/AKMRootCACertificate.pem',
 		'key_name'	=> 'AES256',
 		'ciphertext_encoding' => AKMEncryption::ENCODING_HEX,
+		'fp'		=> $fp,
 	), true, true );
 	print_r( $result );
